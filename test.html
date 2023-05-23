@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Controle Bluetooth</title>
+</head>
+<body>
+  <h1>Controle Bluetooth</h1>
+  <button onclick="sendCommand('1')">Comando 1</button>
+  <button onclick="sendCommand('2')">Comando 2</button>
+  <button onclick="sendCommand('3')">Comando 3</button>
+
+  <script>
+    function sendCommand(command) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "http://<arduino_ip_address>/?command=" + command, true);
+      xhttp.send();
+    }
+  </script>
+</body>
+</html>
+
